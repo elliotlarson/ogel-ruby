@@ -1,0 +1,27 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - exe/*
+    - tmp/**/*
+  TargetRubyVersion: 2.5
+
+Metrics/BlockLength:
+  Exclude:
+    - ogel.gemspec
+    - spec/*
+
+Lint/HandleExceptions:
+  Exclude:
+    - lib/ogel.rb
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': '[]'
+    '%W': '[]'
+    '%i': '[]'
