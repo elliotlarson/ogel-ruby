@@ -21,6 +21,15 @@ module Ogel
       exit 130 # ctrl-c exit code
     end
 
+    def multi_select_from_list(message:, list:)
+      tty.multi_select(color.yellow(message), list, per_page: 15, echo: false)
+    rescue TTY::Reader::InputInterrupt
+      puts
+      puts
+      print_bye
+      exit 130 # ctrl-c exit code
+    end
+
     private
 
     def tty

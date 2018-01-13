@@ -9,6 +9,8 @@ require('ogel/gert')
 require('ogel/gert_cli')
 require('ogel/gout')
 require('ogel/gout_cli')
+require('ogel/gida')
+require('ogel/gida_cli')
 
 begin
   require('pry')

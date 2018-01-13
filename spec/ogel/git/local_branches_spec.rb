@@ -26,8 +26,8 @@ RSpec.describe(Ogel::Git::LocalBranches) do
     it { is_expected.to eq('master') }
   end
 
-  describe('#checkoutable_branches') do
-    subject { instance.checkoutable_branches }
+  describe('#branches_not_currently_on') do
+    subject { instance.branches_not_currently_on }
 
     let(:expected_branches) do
       %w[

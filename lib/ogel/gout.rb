@@ -24,7 +24,7 @@ module Ogel
     private
 
     def_delegators(
-      :@local_branch_retriever, :current_branch, :checkoutable_branches
+      :@local_branch_retriever, :current_branch, :branches_not_currently_on
     )
 
     def_delegators(:@console, :print_cmd, :select_from_list)
@@ -38,9 +38,9 @@ module Ogel
     end
 
     def selected_branch
-      @_selected_brand ||= console.select_from_list(
+      @_selected_branch ||= console.select_from_list(
         message: select_message,
-        list: checkoutable_branches,
+        list: branches_not_currently_on,
       )
     end
 

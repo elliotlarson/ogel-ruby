@@ -5,10 +5,10 @@ module Ogel
     class LocalBranches
       CURRENT_BRANCH_REGEX = /^\*\s/
 
-      attr_accessor(:current_branch, :checkoutable_branches)
+      attr_accessor(:current_branch, :branches_not_currently_on)
 
       def initialize
-        self.checkoutable_branches = []
+        self.branches_not_currently_on = []
         git_branches_output.lines.each { |line| process_line(line) }
       end
 
@@ -23,7 +23,7 @@ module Ogel
         if line =~ CURRENT_BRANCH_REGEX
           self.current_branch = line.gsub(CURRENT_BRANCH_REGEX, '')
         else
-          checkoutable_branches << line
+          branches_not_currently_on << line
         end
       end
     end
