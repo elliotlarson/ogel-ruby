@@ -27,7 +27,7 @@ module Ogel
 
     def selected_remote_branch
       @_selected_remote_branch ||= console.select_from_list(
-        message: 'Checkout a tracking branch for:',
+        message: 'Checkout a remote tracking branch:',
         list: remote_branches_select_options,
       )
     end
