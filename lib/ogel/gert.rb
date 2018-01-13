@@ -1,13 +1,7 @@
 # frozen_string_literal: true
 
 module Ogel
-  class Gert
-    attr_accessor(:console)
-
-    def initialize(console)
-      self.console = console
-    end
-
+  Gert = Struct.new(:console) do
     def self.call(console:)
       new(console).call
     end
