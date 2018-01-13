@@ -3,7 +3,7 @@
 require('thor')
 
 module Ogel
-  # List remote branches and checkout tracking version
+  # Checkout remote tracking branch that is not currently on the system
   class GertCli < Thor
     default_task(:call)
 
